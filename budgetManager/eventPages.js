@@ -42,3 +42,9 @@ chrome.contextMenus.onClicked.addListener((clickData) => {
     chrome.notifications.create("limitNotif", notifOptions, () => {});
   }
 });
+
+chrome.storage.onChanged.addListener((changes, storageName) => {
+  chrome.browserAction.setBadgeText({
+    text: changes.total.newValue.toString(),
+  });
+});
