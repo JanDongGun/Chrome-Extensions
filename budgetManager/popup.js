@@ -20,6 +20,17 @@ form.addEventListener("submit", (e) => {
   const value = form.amount.value;
   newTotal += parseInt(value);
   total.textContent = newTotal;
-  chrome.storage.sync.set({ total: newTotal }, () => {});
+  chrome.storage.sync.set({ total: newTotal }, () => {
+    if (newTotal >= newlimit) {
+      const notifOptions = {
+        type: "basic",
+        iconUrl: "icon48.png",
+        title: "Limit Reached!",
+        message: "Uh oh! look like you've reached your limit",
+      };
+
+      chrome.notifications.create("limitNotif", notifOptions, () => {});
+    }
+  });
   form.reset();
 });

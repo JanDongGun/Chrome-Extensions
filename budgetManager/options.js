@@ -17,4 +17,12 @@ saveLimit.addEventListener("click", (e) => {
 resetTotal.addEventListener("click", (e) => {
   e.preventDefault();
   chrome.storage.sync.set({ total: 0 });
+  const notifOptions = {
+    type: "basic",
+    iconUrl: "icon48.png",
+    title: "Total Reset!",
+    message: "Total has been reset",
+  };
+
+  chrome.notifications.create("limitNotif", notifOptions, () => {});
 });
