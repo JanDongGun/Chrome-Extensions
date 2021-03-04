@@ -1,11 +1,17 @@
 const form = document.querySelector("form");
 const total = document.querySelector("#total");
+const limit = document.querySelector("#limit");
 let newTotal = 0;
+let newlimit = 0;
 
-chrome.storage.sync.get("total", (budget) => {
+chrome.storage.sync.get(["total", "limit"], (budget) => {
   if (budget.total) {
     newTotal = budget.total;
     total.textContent = newTotal;
+  }
+  if (budget.limit) {
+    newlimit = budget.limit;
+    limit.textContent = newlimit;
   }
 });
 
