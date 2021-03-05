@@ -2,6 +2,7 @@
   "manifest_version": 2,
   "name": "PageFontStyle Extension",
   "description": "change font style on a specific page",
+  "version": "1.0",
   "icon": {
     "128": "icon128.png",
     "48": "icon48.png",
@@ -11,5 +12,10 @@
     "default_icon": "icon16.png",
     "default_popup": "popup.html",
     "default_title": "PageFontStyle"
-  }
+  },
+  "background": {
+    "scripts": ["eventPage.js"],
+    "persistent": false
+  },
+  "permissions": ["tabs"]
 }
