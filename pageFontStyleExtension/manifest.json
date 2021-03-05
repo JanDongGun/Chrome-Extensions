@@ -3,7 +3,7 @@
   "name": "PageFontStyle Extension",
   "description": "change font style on a specific page",
   "version": "1.0",
-  "icon": {
+  "icons": {
     "128": "icon128.png",
     "48": "icon48.png",
     "16": "icon16.png"
