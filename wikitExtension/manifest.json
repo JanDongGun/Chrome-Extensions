@@ -12,5 +12,5 @@
     "scripts": ["eventPage.js"],
     "persistent": false
   },
-  "permissons": ["tabs", "contextMenus"]
+  "permissions": ["tabs", "contextMenus"]
 }
